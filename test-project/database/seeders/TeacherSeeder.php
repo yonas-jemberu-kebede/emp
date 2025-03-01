@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Teacher;
 use Illuminate\Database\Seeder;
 
 class TeacherSeeder extends Seeder
@@ -12,6 +12,6 @@ class TeacherSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Teacher::factory(5)->create();
     }
 }
