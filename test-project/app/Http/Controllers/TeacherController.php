@@ -35,7 +35,7 @@ class TeacherController extends Controller
         $validated = $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            'email' => 'required|email|unique:students,email',
+            'email' => 'required|email|unique:teachers,email',
             'gender' => 'required|in:male,female',
             'date_of_birth' => 'required|date|before:today',
         ]);
@@ -72,10 +72,10 @@ class TeacherController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validated = $request->validate([
+        $validated = $request->validate(rules: [
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            'email' => 'required|email',
+            'email' => "required|email|unique:teachers,email,{$id}",
             'gender' => 'required|in:male,female',
             'date_of_birth' => 'required|date|before:today',
         ]);
