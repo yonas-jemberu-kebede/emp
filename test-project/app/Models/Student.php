@@ -9,16 +9,16 @@ class Student extends Model
 {
     use HasFactory;
 
-    protected $guarded=[];
+    protected $guarded = [];
 
     public function subjects()
     {
         return $this->belongsToMany(Subject::class, 'student_subject');
     }
+
     public function teachers()
     {
-        return
-        $this->belongsToMany( Teacher::class, 'student_teacher');
+        return $this->belongsToMany(Teacher::class, 'student_teacher');
     }
 
     public function grades()
