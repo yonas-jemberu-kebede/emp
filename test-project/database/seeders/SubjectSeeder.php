@@ -10,19 +10,13 @@ class SubjectSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(): void 
     {
-        Subject::insert([
-            [
-                'name' => 'Maths',
-            ],
-            [
-                'name' => 'physics',
-            ],
-            [
-                'name' => 'biology',
-            ],
-        ]);
+        $subjects=['Maths','physics','biology'];
+
+        foreach($subjects as $subject){
+            Subject::create(['name'=> $subject]);
+        }
 
     }
 }
