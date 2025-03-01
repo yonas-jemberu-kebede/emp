@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->enum('gender', ['male', 'female']);
             $table->date('date_of_birth');
-            
+
             $table->timestamps();
         });
     }
