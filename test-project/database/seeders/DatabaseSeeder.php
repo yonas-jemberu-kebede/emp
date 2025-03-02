@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Database\Seeders\UserSeeder;
+use Spatie\Permission\Models\Permission;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -16,6 +17,13 @@ class DatabaseSeeder extends Seeder
             StudentSeeder::class,
             GradeSeeder::class,
             SubjectSeeder::class,
+            Roleseeder::class,
+            UserSeeder::class,
+
+        ]);
+
+
+        $this->call([
             RoleSeeder::class,
         ]);
     }
